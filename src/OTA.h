@@ -33,6 +33,7 @@ class OTA {
         void pollWifiState();
         bool handlePostSketch(WiFiClient& client, String& req_str);
         void stopHardware();
+        void handlePing()(WiFiClient client);
 
         byte mac[6];
         int status;
