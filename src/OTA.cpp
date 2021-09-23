@@ -67,6 +67,9 @@ void OTA::pollWifiState()
     else
     {
       // a device has disconnected from the AP, and we are back in listening mode
+      // Reset server with server.begin() to accept new connections
+      // https://github.com/arduino-libraries/WiFi101/issues/110#issuecomment-256662397
+      server.begin();
       LOG.println("Device disconnected from AP");
       led_interval = 2000;
     }
